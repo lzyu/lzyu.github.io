@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,Spring," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="vanshouse" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="一.Mysql的基本操作1. navicat图形化界面工具的使用  图片可以这样插入控制大小：&amp;lt;img src=&amp;quot;\photo\jianlilianjie.png&amp;quot; style=&amp;quot;zoom:100%&amp;quot; /&amp;gt;  首先新建一个连接： 输入连接名，用户名，密码：建立好连接。 然后右击连接，新建数据库，  字符集选择支持中文编码的UTF-8。 点开新建的">
+<meta name="keywords" content="Java,Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="newcode_study_3">
+<meta property="og:url" content="http://zhenyulee.cn/2018/01/12/newcode-study-3/index.html">
+<meta property="og:site_name" content="vanshouse">
+<meta property="og:description" content="一.Mysql的基本操作1. navicat图形化界面工具的使用  图片可以这样插入控制大小：&amp;lt;img src=&amp;quot;\photo\jianlilianjie.png&amp;quot; style=&amp;quot;zoom:100%&amp;quot; /&amp;gt;  首先新建一个连接： 输入连接名，用户名，密码：建立好连接。 然后右击连接，新建数据库，  字符集选择支持中文编码的UTF-8。 点开新建的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://lzygit-1255804027.cos.ap-beijing.myqcloud.com/photo/jianlilianjie.png">
+<meta property="og:image" content="https://lzygit-1255804027.cos.ap-beijing.myqcloud.com/photo/xinjianbiao.png">
+<meta property="og:image" content="https://lzygit-1255804027.cos.ap-beijing.myqcloud.com/photo/xinjiansuoyin.png">
+<meta property="og:image" content="http://zhenyulee.cn/2018/01/12/newcode-study-3/photo/mybatis.png">
+<meta property="og:image" content="https://lzygit-1255804027.cos.ap-beijing.myqcloud.com/photo/daomulu.png">
+<meta property="og:image" content="https://lzygit-1255804027.cos.ap-beijing.myqcloud.com/photo/model.png">
+<meta property="og:image" content="https://lzygit-1255804027.cos.ap-beijing.myqcloud.com/photo/shouyeneirong.png">
+<meta property="og:image" content="https://lzygit-1255804027.cos.ap-beijing.myqcloud.com/photo/moban.png">
+<meta property="og:updated_time" content="2018-01-14T07:42:11.024Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="newcode_study_3">
+<meta name="twitter:description" content="一.Mysql的基本操作1. navicat图形化界面工具的使用  图片可以这样插入控制大小：&amp;lt;img src=&amp;quot;\photo\jianlilianjie.png&amp;quot; style=&amp;quot;zoom:100%&amp;quot; /&amp;gt;  首先新建一个连接： 输入连接名，用户名，密码：建立好连接。 然后右击连接，新建数据库，  字符集选择支持中文编码的UTF-8。 点开新建的">
+<meta name="twitter:image" content="https://lzygit-1255804027.cos.ap-beijing.myqcloud.com/photo/jianlilianjie.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhenyulee.cn/2018/01/12/newcode-study-3/"/>
+
+
+
+
+
+  <title>newcode_study_3 | vanshouse</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5cd3e5e471021d331d13e0e9e9040cd3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">vanshouse</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhenyulee.cn/2018/01/12/newcode-study-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhenyulee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://static.pexels.com/photos/33392/portrait-bird-nature-wild.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="vanshouse">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">newcode_study_3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-12T09:51:38+08:00">
+                2018-01-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/newcode/" itemprop="url" rel="index">
+                    <span itemprop="name">newcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/12/newcode-study-3/" class="leancloud_visitors" data-flag-title="newcode_study_3">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一-Mysql的基本操作"><a href="#一-Mysql的基本操作" class="headerlink" title="一.Mysql的基本操作"></a>一.Mysql的基本操作</h2><h3 id="1-navicat图形化界面工具的使用"><a href="#1-navicat图形化界面工具的使用" class="headerlink" title="1. navicat图形化界面工具的使用"></a>1. navicat图形化界面工具的使用</h3><p><img src="https://lzygit-1255804027.cos.ap-beijing.myqcloud.com/photo/jianlilianjie.png" style="zoom:80%"></p>
+<blockquote>
+<p>图片可以这样插入控制大小：<code>&lt;img src=&quot;\photo\jianlilianjie.png&quot; style=&quot;zoom:100%&quot; /&gt;</code></p>
+</blockquote>
+<p>首先新建一个连接： 输入连接名，用户名，密码：建立好连接。</p>
+<p>然后右击连接，<code>新建数据库</code>，  字符集选择支持中文编码的UTF-8。</p>
+<p>点开新建的数据库，我们可以右击<code>表</code> 选项新建一张表，如下图(其中主键可以选择自动递增选项)：</p>
+<p><img src="https://lzygit-1255804027.cos.ap-beijing.myqcloud.com/photo/xinjianbiao.png" style="zoom:80%"></p>
+<p>希望建立索引时，可以点击<code>索引</code> 选项，如下图建立了<code>unique</code> 索引：</p>
+<p><img src="https://lzygit-1255804027.cos.ap-beijing.myqcloud.com/photo/xinjiansuoyin.png" style="zoom:80%"></p>
+<p><code>ctrl+s</code> 保存，至此一张表就建立起来。</p>
+<h3 id="2-sql语句创建表"><a href="#2-sql语句创建表" class="headerlink" title="2. sql语句创建表"></a>2. sql语句创建表</h3><p>如下 创建了<code>user</code> ，<code>question</code> 两张表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE IF EXISTS `question`;</span><br><span class="line">CREATE TABLE `question` (</span><br><span class="line">  `id` INT NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `title` VARCHAR(255) NOT NULL,</span><br><span class="line">  `content` TEXT NULL,</span><br><span class="line">  `user_id` INT NOT NULL,</span><br><span class="line">  `created_date` DATETIME NOT NULL,</span><br><span class="line">  `comment_count` INT NOT NULL,</span><br><span class="line">  PRIMARY KEY (`id`),</span><br><span class="line">  INDEX `date_index` (`created_date` ASC));</span><br><span class="line"></span><br><span class="line">  DROP TABLE IF EXISTS `user`;</span><br><span class="line">  CREATE TABLE `user` (</span><br><span class="line">    `id` int(11) unsigned NOT NULL AUTO_INCREMENT,</span><br><span class="line">    `name` varchar(64) NOT NULL DEFAULT &apos;&apos;,</span><br><span class="line">    `password` varchar(128) NOT NULL DEFAULT &apos;&apos;,</span><br><span class="line">    `salt` varchar(32) NOT NULL DEFAULT &apos;&apos;,</span><br><span class="line">    `head_url` varchar(256) NOT NULL DEFAULT &apos;&apos;,</span><br><span class="line">    PRIMARY KEY (`id`),</span><br><span class="line">    UNIQUE KEY `name` (`name`)</span><br><span class="line">  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+<p>其中说明下 <code>TEXT</code> 基本类型，可以保存比较多的字符，如使用在评论中。</p>
+<h3 id="3-Simple-CURD"><a href="#3-Simple-CURD" class="headerlink" title="3.Simple CURD"></a>3.Simple CURD</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into TABLE_NAME (name, password, salt, head_Url) values (#&#123;name&#125;,#&#123;password&#125;,#&#123;salt&#125;,#&#123;headUrl&#125;) ;</span><br><span class="line">select * from TABLE_NAME where ? ;</span><br><span class="line">update TABLE_NAME set password = #&#123;password&#125; where ? ;</span><br><span class="line">delete from TABLE_NAME where ? ;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="二-Mybatis的简介"><a href="#二-Mybatis的简介" class="headerlink" title="二.Mybatis的简介"></a>二.Mybatis的简介</h2><p>MyBatis是一个支持<strong>普通</strong> <strong>SQL</strong> <strong>查询</strong> ，<strong>存储过程</strong>和<strong>高级映射</strong>的优秀<code>持久层框架</code> 。MyBatis消除了几乎所有的JDBC代码和参数的手工设置以及对结果集的检索封装。MyBatis可以使用简单的<strong>XML或注解</strong>用于配置和原始映射，将接口和Java的POJO（Plain Old Java Objects，普通的Java对象）映射成数据库中的记录。</p>
+<h3 id="1-JDBC实现分析"><a href="#1-JDBC实现分析" class="headerlink" title="1.JDBC实现分析"></a>1.JDBC实现分析</h3><ul>
+<li><ol>
+<li>加载JDBC驱动（如不同的驱动mysql、oracle）</li>
+</ol>
+</li>
+<li><ol>
+<li>创建链接（根据用户名、密码）</li>
+<li>创建 JDBC Statements 对象（相当于sql语句）</li>
+<li>设置SQL语句的传入参数</li>
+<li>执行SQL语句并获得查询结果（数据库运行sql语句）</li>
+<li>对查询结果进行转换处理并将处理结果返回</li>
+<li>释放资源</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;Map&lt;String,Object&gt;&gt; queryForList()&#123;  </span><br><span class="line">        Connection connection = <span class="keyword">null</span>;  </span><br><span class="line">        ResultSet rs = <span class="keyword">null</span>;  </span><br><span class="line">        PreparedStatement stmt = <span class="keyword">null</span>;  </span><br><span class="line">        List&lt;Map&lt;String,Object&gt;&gt; resultList = <span class="keyword">new</span> ArrayList&lt;Map&lt;String,Object&gt;&gt;();  </span><br><span class="line">          </span><br><span class="line">        <span class="keyword">try</span> &#123;  </span><br><span class="line">            <span class="comment">//加载JDBC驱动  </span></span><br><span class="line">            Class.forName(<span class="string">"oracle.jdbc.driver.OracleDriver"</span>).newInstance();  </span><br><span class="line">          </span><br><span class="line">            String url = <span class="string">"jdbc:oracle:thin:@localhost:1521:ORACLEDB"</span>;  </span><br><span class="line">            String user = <span class="string">"root"</span>;   </span><br><span class="line">            String password = <span class="string">"1234"</span>;   </span><br><span class="line">              </span><br><span class="line">            <span class="comment">//获取数据库连接  </span></span><br><span class="line">            connection = DriverManager.getConnection(url,user,password);   </span><br><span class="line">              </span><br><span class="line">            String sql = <span class="string">"select * from userinfo where user_id = ? "</span>;  </span><br><span class="line">            <span class="comment">//创建Statement对象（每一个Statement为一次数据库执行请求）  </span></span><br><span class="line">            stmt = connection.prepareStatement(sql);  </span><br><span class="line">              </span><br><span class="line">            <span class="comment">//设置传入参数  </span></span><br><span class="line">            stmt.setString(<span class="number">1</span>, <span class="string">"zhangsan"</span>);  </span><br><span class="line">              </span><br><span class="line">            <span class="comment">//执行SQL语句  </span></span><br><span class="line">            rs = stmt.executeQuery();  </span><br><span class="line">              </span><br><span class="line">            <span class="comment">//处理查询结果（将查询结果转换成List&lt;Map&gt;格式）  </span></span><br><span class="line">            ResultSetMetaData rsmd = rs.getMetaData();  </span><br><span class="line">            <span class="keyword">int</span> num = rsmd.getColumnCount();  </span><br><span class="line">              </span><br><span class="line">            <span class="keyword">while</span>(rs.next())&#123;  </span><br><span class="line">                Map map = <span class="keyword">new</span> HashMap();  </span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; num;i++)&#123;  </span><br><span class="line">                    String columnName = rsmd.getColumnName(i+<span class="number">1</span>);  </span><br><span class="line">                    map.put(columnName,rs.getString(columnName));  </span><br><span class="line">                &#125;  </span><br><span class="line">                resultList.add(map);  </span><br><span class="line">            &#125;  </span><br><span class="line">              </span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;  </span><br><span class="line">            <span class="keyword">try</span> &#123;  </span><br><span class="line">                   <span class="comment">//关闭结果集  </span></span><br><span class="line">                <span class="keyword">if</span> (rs != <span class="keyword">null</span>) &#123;  </span><br><span class="line">                    rs.close();  </span><br><span class="line">                    rs = <span class="keyword">null</span>;  </span><br><span class="line">                &#125;  </span><br><span class="line">                   <span class="comment">//关闭执行  </span></span><br><span class="line">                <span class="keyword">if</span> (stmt != <span class="keyword">null</span>) &#123;  </span><br><span class="line">                    stmt.close();  </span><br><span class="line">                    stmt = <span class="keyword">null</span>;  </span><br><span class="line">                &#125;  </span><br><span class="line">                <span class="keyword">if</span> (connection != <span class="keyword">null</span>) &#123;  </span><br><span class="line">                    connection.close();  </span><br><span class="line">                    connection = <span class="keyword">null</span>;  </span><br><span class="line">                &#125;  </span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException e) &#123;  </span><br><span class="line">                e.printStackTrace();  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">          </span><br><span class="line">        <span class="keyword">return</span> resultList;  </span><br><span class="line">    &#125;  &lt;strong&gt;</span><br><span class="line">&lt;/strong&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-JDBC演变到Mybatis过程"><a href="#2-JDBC演变到Mybatis过程" class="headerlink" title="2.JDBC演变到Mybatis过程"></a>2.JDBC演变到Mybatis过程</h3><p>   上面我们看到了实现JDBC有七个步骤，哪些步骤是可以进一步封装的，减少我们开发的代码量。</p>
+<p><strong>第一步优化：连接获取和释放</strong> </p>
+<p>问题描述：</p>
+<p>数据库连接频繁的开启和关闭本身就造成了资源的浪费，影响系统的性能。</p>
+<p>解决问题：</p>
+<p>数据库连接的获取和关闭我们可以使用数据库连接池来解决资源浪费的问题。通过连接池就可以反复利用已经建立的连接去访问数据库了。减少连接的开启和关闭的时间。</p>
+<p>问题描述：</p>
+<p>但是现在连接池多种多样，可能存在变化，有可能采用DBCP的连接池，也有可能采用容器本身的JNDI数据库连接池。 </p>
+<p>解决问题：</p>
+<p>我们可以通过DataSource进行隔离解耦，我们统一从DataSource里面获取数据库连接，DataSource具体由DBCP实现还是由容器的JNDI实现都可以，所以我们将DataSource的具体实现通过让用户配置来应对变化。</p>
+<p><strong>第二步优化：SQL统一存取</strong> </p>
+<p>问题描述：</p>
+<p>我们使用JDBC进行操作数据库时，SQL语句基本都散落在各个JAVA类中，这样有三个不足之处：</p>
+<p>第一，可读性很差，不利于维护以及做性能调优。</p>
+<p>第二，改动Java代码需要重新编译、打包部署。</p>
+<p>第三，不利于取出SQL在数据库客户端执行（取出后还得删掉中间的Java代码，编写好的SQL语句写好后还得通过＋号在Java进行拼凑）。</p>
+<p>解决问题：</p>
+<p>我们可以考虑不把SQL语句写到Java代码中，那么把SQL语句放到哪里呢？首先需要有一个统一存放的地方，我们可以将这些SQL语句统一集中放到配置文件或者数据库里面（以key-value的格式存放）。然后通过SQL语句的key值去获取对应的SQL语句。</p>
+<p>既然我们将SQL语句都统一放在配置文件或者数据库中，那么这里就涉及一个SQL语句的加载问题。</p>
+<p><strong>第三步优化：传入参数映射和动态SQL</strong> </p>
+<p>问题描述：</p>
+<p>很多情况下，我们都可以通过在SQL语句中设置占位符来达到使用传入参数的目的，这种方式本身就有一定局限性，它是按照一定顺序传入参数的，要与占位符一一匹配。但是，如果我们传入的参数是不确定的（比如列表查询，根据用户填写的查询条件不同，传入查询的参数也是不同的，有时是一个参数、有时可能是三个参数），那么我们就得在后台代码中自己根据请求的传入参数去拼凑相应的SQL语句，这样的话还是避免不了在Java代码里面写SQL语句的命运。既然我们已经把SQL语句统一存放在配置文件或者数据库中了，怎么做到能够根据前台传入参数的不同，动态生成对应的SQL语句呢？</p>
+<p>解决问题：</p>
+<p>第一，我们先解决这个动态问题，按照我们正常的程序员思维是，通过if和else这类的判断来进行是最直观的，这个时候我们想到了JSTL中的<if test="””"></if>这样的标签，那么，能不能将这类的标签引入到SQL语句中呢？假设可以，那么我们这里就需要一个专门的SQL解析器来解析这样的SQL语句，但是，if判断的变量来自于哪里呢？传入的值本身是可变的，那么我们得为这个值定义一个不变的变量名称，而且这个变量名称必须和对应的值要有对应关系，可以通过这个变量名称找到对应的值，这个时候我们想到了key-value的Map。解析的时候根据变量名的具体值来判断。</p>
+<p>假如前面可以判断没有问题，那么假如判断的结果是true，那么就需要输出的标签里面的SQL片段，但是怎么解决在标签里面使用变量名称的问题呢？这里我们需要使用一种有别于SQL的语法来嵌入变量（比如使用＃变量名＃）。这样，SQL语句经过解析后就可以动态的生成符合上下文的SQL语句。</p>
+<p>还有，怎么区分开占位符变量和非占位变量？有时候我们单单使用占位符是满足不了的，占位符只能为查询条件占位，SQL语句其他地方使用不了。这里我们可以使用#变量名#表示占位符变量，使用$变量名$表示非占位符变量。</p>
+<p><strong>第四步优化：结果映射和结果缓存</strong> </p>
+<p>问题描述：</p>
+<p>执行SQL语句、获取执行结果、对执行结果进行转换处理、释放相关资源是一整套下来的。假如是执行查询语句，那么执行SQL语句后，返回的是一个ResultSet结果集，这个时候我们就需要将ResultSet对象的数据取出来，不然等到释放资源时就取不到这些结果信息了。我们从前面的优化来看，以及将获取连接、设置传入参数、执行SQL语句、释放资源这些都封装起来了，只剩下结果处理这块还没有进行封装，如果能封装起来，每个数据库操作都不用自己写那么一大堆Java代码，直接调用一个封装的方法就可以搞定了。</p>
+<p>解决问题：</p>
+<p>我们分析一下，一般对执行结果的有哪些处理，有可能将结果不做任何处理就直接返回，也有可能将结果转换成一个JavaBean对象返回、一个Map返回、一个List返回等等，结果处理可能是多种多样的。从这里看，我们必须告诉SQL处理器两点：第一，需要返回什么类型的对象；第二，需要返回的对象的数据结构怎么跟执行的结果映射，这样才能将具体的值copy到对应的数据结构上。</p>
+<p>​    接下来，我们可以进而考虑对SQL执行结果的缓存来提升性能。缓存数据都是key-value的格式，那么这个key怎么来呢？怎么保证唯一呢？即使同一条SQL语句几次访问的过程中由于传入参数的不同，得到的执行SQL语句也是不同的。那么缓存起来的时候是多对。但是SQL语句和传入参数两部分合起来可以作为数据缓存的key值。</p>
+<p><strong>第五步优化：解决重复SQL语句问题</strong> </p>
+<p>问题描述：</p>
+<p>由于我们将所有SQL语句都放到配置文件中，这个时候会遇到一个SQL重复的问题，几个功能的SQL语句其实都差不多，有些可能是SELECT后面那段不同、有些可能是WHERE语句不同。有时候表结构改了，那么我们就需要改多个地方，不利于维护。</p>
+<p>解决问题：</p>
+<p>​     当我们的代码程序出现重复代码时怎么办？将重复的代码抽离出来成为独立的一个类，然后在各个需要使用的地方进行引用。对于SQL重复的问题，我们也可以采用这种方式，通过将SQL片段模块化，将重复的SQL片段独立成一个SQL块，然后在各个SQL语句引用重复的SQL块，这样需要修改时只需要修改一处即可。</p>
+<p><strong>优化总结</strong> </p>
+<p>我们总结一下上面对JDBC的优化和封装：</p>
+<p>（1） 使用数据库连接池对连接进行管理</p>
+<p>（2） SQL语句统一存放到配置文件</p>
+<p>（3） SQL语句变量和传入参数的映射以及动态SQL</p>
+<p>（4） 动态SQL语句的处理</p>
+<p>（5） 对数据库操作结果的映射和结果缓存</p>
+<p>（6） SQL语句的重复</p>
+<p>这里参考文章： <a href="http://blog.csdn.net/xudan1010/article/details/53435018" target="_blank" rel="noopener">Mybatis实现原理深入解析</a></p>
+<p>​                            <a href="http://www.mybatis.org/mybatis-3/zh/index.html" target="_blank" rel="noopener">Mybatis官方文档</a></p>
+<hr>
+<h2 id="三-在Spring-boot-中配置Mybatis"><a href="#三-在Spring-boot-中配置Mybatis" class="headerlink" title="三.在Spring-boot 中配置Mybatis"></a>三.在Spring-boot 中配置Mybatis</h2><p>首先，在<strong>pom.xml</strong> 中导入如下依赖：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">	&lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;1.1.1&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>之后完成配置文件：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    driver-class-name: com.mysql.jdbc.Driver</span><br><span class="line">    url: jdbc:mysql:<span class="comment">//localhost:3306/db_user</span></span><br><span class="line">    username: root</span><br><span class="line">    password: <span class="number">1234</span></span><br></pre></td></tr></table></figure>
+<p>我的项目中部署为：</p>
+<p><img src="photo\mybatis.png" style="zoom:80%"></p>
+<p>application.properties:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.url=jdbc:mysql:<span class="comment">//localhost:3306/wenda?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</span></span><br><span class="line">spring.datasource.username=root</span><br><span class="line">spring.datasource.password=<span class="number">1234</span></span><br><span class="line">mybatis.config-location=classpath:mybatis-config.xml</span><br></pre></td></tr></table></figure>
+<p>mybatis-config.xml:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;!DOCTYPE configuration</span><br><span class="line">        PUBLIC <span class="string">"-//mybatis.org//DTD Config 3.0//EN"</span></span><br><span class="line">        <span class="string">"http://mybatis.org/dtd/mybatis-3-config.dtd"</span>&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;settings&gt;</span><br><span class="line">        &lt;!-- 缓存Globally enables or disables any caches configured in any mapper under <span class="keyword">this</span> configuration --&gt;</span><br><span class="line">        &lt;setting name=<span class="string">"cacheEnabled"</span> value=<span class="string">"true"</span>/&gt;</span><br><span class="line">        &lt;!-- Sets the number of seconds the driver will wait <span class="keyword">for</span> a response from the database --&gt;</span><br><span class="line">        &lt;setting name=<span class="string">"defaultStatementTimeout"</span> value=<span class="string">"3000"</span>/&gt;</span><br><span class="line">        &lt;!-- Enables automatic mapping from classic database column names A_COLUMN to camel <span class="keyword">case</span> classic Java property names aColumn --&gt;</span><br><span class="line">        &lt;setting name=<span class="string">"mapUnderscoreToCamelCase"</span> value=<span class="string">"true"</span>/&gt;</span><br><span class="line">        &lt;!-- Allows JDBC support <span class="keyword">for</span> generated keys. A compatible driver is required.</span><br><span class="line">        This setting forces generated keys to be used <span class="keyword">if</span> set to <span class="keyword">true</span>,</span><br><span class="line">         as some drivers deny compatibility but still work --&gt;</span><br><span class="line">        &lt;setting name=<span class="string">"useGeneratedKeys"</span> value=<span class="string">"true"</span>/&gt;</span><br><span class="line">    &lt;/settings&gt;</span><br><span class="line">    &lt;!-- Continue going here --&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="四-在Spring-boot中使用Mybatis操控数据库"><a href="#四-在Spring-boot中使用Mybatis操控数据库" class="headerlink" title="四.在Spring-boot中使用Mybatis操控数据库"></a>四.在Spring-boot中使用Mybatis操控数据库</h2><h3 id="1-使用注解的方式操控数据库"><a href="#1-使用注解的方式操控数据库" class="headerlink" title="1. 使用注解的方式操控数据库"></a>1. 使用注解的方式操控数据库</h3><p>新建<code>DAO</code> , 新建<code>UserDAO.interface</code> ,  如下，添加<code>@Mapper</code> 注解：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Mapper</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserDAO</span> </span>&#123;</span><br><span class="line">    String TABLE_NAME = <span class="string">" user "</span>;</span><br><span class="line">    String INSERT_FIELDS = <span class="string">" name, password, salt, head_Url "</span>;</span><br><span class="line">    String SELECT_FIELDS = <span class="string">" id, "</span> + INSERT_FIELDS;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Insert</span>(&#123;<span class="string">"insert into"</span>, TABLE_NAME, <span class="string">"("</span>, INSERT_FIELDS,</span><br><span class="line">            <span class="string">") values(#&#123;name&#125;,#&#123;password&#125;,#&#123;salt&#125;,#&#123;headUrl&#125;)"</span>&#125;)</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">addUser</span><span class="params">(User user)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Select</span>(&#123;<span class="string">"select"</span>, SELECT_FIELDS, <span class="string">" from "</span>, TABLE_NAME, <span class="string">"where id = #&#123;id&#125;"</span>&#125;)</span><br><span class="line">    <span class="function">User <span class="title">slectById</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Update</span>(&#123;<span class="string">"update"</span>, TABLE_NAME, <span class="string">"set password=#&#123;password&#125; where id = #&#123;id&#125;"</span>&#125;)</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">updatePassword</span><span class="params">(User user)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Delete</span>(&#123;<span class="string">"delete from "</span>, TABLE_NAME, <span class="string">" where id=#&#123;id&#125;"</span>&#125;)</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">deleteById</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>现在我们来测试一下，在<strong>test</strong> 中新建<code>InitDaoTest</code> :</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">   <span class="meta">@Autowired</span></span><br><span class="line"><span class="meta">@SuppressWarnings</span>(<span class="string">"SpringJavaAutowiringInspection"</span>)</span><br><span class="line">UserDAO userDAO;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initDatabase</span><span class="params">()</span></span>&#123;</span><br><span class="line">	Random random = <span class="keyword">new</span> Random();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">11</span>; i++) &#123;</span><br><span class="line">		User user = <span class="keyword">new</span> User();</span><br><span class="line">		             user.setHeadUrl(String.format(<span class="string">"http://images.nowcoder.com/head/%dt.png"</span>,random.nextInt(<span class="number">1000</span>)));</span><br><span class="line">		user.setName(String.format(<span class="string">"user%d"</span>,i));</span><br><span class="line">		user.setPassword(<span class="string">""</span>);</span><br><span class="line">		user.setSalt(<span class="string">""</span>);</span><br><span class="line">		userDAO.addUser(user);</span><br><span class="line"></span><br><span class="line">		user.setPassword(<span class="string">"xx"</span>);</span><br><span class="line">		userDAO.updatePassword(user);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Assert.assertEquals(<span class="string">"xx"</span>,userDAO.slectById(<span class="number">2</span>).getPassword());</span><br><span class="line">	userDAO.deleteById(<span class="number">2</span>);</span><br><span class="line">	Assert.assertNull(userDAO.slectById(<span class="number">2</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>先获取<strong>userDAO</strong> 对象，然后通过<strong>useDAO</strong> 对象操控数据库。</p>
+<h3 id="2-使用xml的方式操控数据库"><a href="#2-使用xml的方式操控数据库" class="headerlink" title="2. 使用xml的方式操控数据库"></a>2. 使用xml的方式操控数据库</h3><p><img src="https://lzygit-1255804027.cos.ap-beijing.myqcloud.com/photo/daomulu.png" style="zoom:100%"></p>
+<p>首先，我们在<code>model</code> 包下新建<code>question</code> ,如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Question</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="keyword">private</span> String content;</span><br><span class="line">    <span class="keyword">private</span> Date createdDate;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> userID;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> commentCount;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getUserID</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> userID;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUserID</span><span class="params">(<span class="keyword">int</span> userID)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.userID = userID;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>在<code>dao</code> 包下新建<code>questionDao</code> 文件，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.nowcoder.dao;</span><br><span class="line"><span class="keyword">import</span> com.nowcoder.model.Question;</span><br><span class="line"><span class="keyword">import</span> com.nowcoder.model.User;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.annotations.*;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Mapper</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">QuestionDAO</span> </span>&#123;</span><br><span class="line">    String TABLE_NAME = <span class="string">" question "</span>;</span><br><span class="line">    String INSERT_FIELDS = <span class="string">" title, content, created_date, user_id, comment_count"</span>;</span><br><span class="line">    String SELECT_FIELDS = <span class="string">" id, "</span> + INSERT_FIELDS;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Insert</span>(&#123;<span class="string">"insert into"</span>, TABLE_NAME, <span class="string">"("</span>, INSERT_FIELDS,</span><br><span class="line">            <span class="string">") values(#&#123;title&#125;,#&#123;content&#125;,#&#123;createdDate&#125;,#&#123;userID&#125;,#&#123;commentCount&#125;)"</span>&#125;)</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">addQuestion</span><span class="params">(Question question)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">List&lt;Question&gt; <span class="title">selectLatestQuestions</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">            @Param(<span class="string">"userId"</span>)</span> <span class="keyword">int</span> userId,</span></span><br><span class="line"><span class="function">            @<span class="title">Param</span><span class="params">(<span class="string">"offset"</span>)</span> <span class="keyword">int</span> offset,</span></span><br><span class="line"><span class="function">            @<span class="title">Param</span><span class="params">(<span class="string">"limit"</span>)</span> <span class="keyword">int</span> limit)</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以见上文件，其中<strong>insert</strong> 操作是通过注解实现的，而<strong>selectLatestQuestions</strong> 操作就是通过<strong>xml</strong> 实现的了。</p>
+<p>如何使用<strong>xml</strong> 来实现呢，首先在<code>resources</code> 文件夹的同目录下新建<code>questionDao.xml</code> <strong>同名</strong> 文件，内容如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"</span><br><span class="line">        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" &gt;</span><br><span class="line">&lt;mapper namespace="com.nowcoder.dao.QuestionDAO"&gt;</span><br><span class="line">    &lt;sql id="table"&gt;question&lt;/sql&gt;</span><br><span class="line">    &lt;sql id="selectFields"&gt;id, title, content, comment_count,created_date,user_id</span><br><span class="line">    &lt;/sql&gt;</span><br><span class="line">    &lt;select id="selectLatestQuestions" resultType="com.nowcoder.model.Question"&gt;</span><br><span class="line">        <span class="keyword">SELECT</span></span><br><span class="line">        &lt;<span class="keyword">include</span> refid=<span class="string">"selectFields"</span>/&gt;</span><br><span class="line">        <span class="keyword">FROM</span></span><br><span class="line">        &lt;<span class="keyword">include</span> refid=<span class="string">"table"</span>/&gt;</span><br><span class="line"></span><br><span class="line">        &lt;<span class="keyword">if</span> <span class="keyword">test</span>=<span class="string">"userId != 0"</span>&gt;</span><br><span class="line">            <span class="keyword">WHERE</span> user_id = #&#123;userId&#125;</span><br><span class="line">        &lt;/<span class="keyword">if</span>&gt;</span><br><span class="line">        <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span> <span class="keyword">DESC</span></span><br><span class="line">        <span class="keyword">LIMIT</span> #&#123;<span class="keyword">offset</span>&#125;,#&#123;<span class="keyword">limit</span>&#125;</span><br><span class="line">    &lt;/<span class="keyword">select</span>&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+<p>其中实现了一个select操作，要求传入 <strong>userId,offset,limit</strong> 参数，并且这个操作的id要与<strong>dao</strong> 文件里面一致。</p>
+<p>除此，<strong>namespace</strong> 也要写入具体的路径，<code>ctrl</code> 操作要能跳转过去。</p>
+<p>最后，在单元测试中我们就可以使用此<strong>sql</strong> 操作了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">questionDAO.selectLatestQuestions(<span class="number">0</span>,<span class="number">0</span>,<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="五-通过dao实现首页的查询显示"><a href="#五-通过dao实现首页的查询显示" class="headerlink" title="五.通过dao实现首页的查询显示"></a>五.通过dao实现首页的查询显示</h2><h3 id="1-web项目的结构回顾"><a href="#1-web项目的结构回顾" class="headerlink" title="1.  web项目的结构回顾"></a>1.  web项目的结构回顾</h3><ul>
+<li><strong>model</strong> </li>
+</ul>
+<p>Model是模型，一般而言，会有人分的更细，VO，DTO等等。我并不推荐分的更细，这个Model常常和持久化的数据一一对应，如Mysql和MongoDB。</p>
+<p>Model承载的作用就是数据的抽象，描述了一个数据的定义，Model的实例就是一组组的数据。整个系统都可以看成是数据的 流动，既然要流动，就一定是有流动的载体。</p>
+<p><img src="https://lzygit-1255804027.cos.ap-beijing.myqcloud.com/photo/model.png" style="zoom:100%"></p>
+<p>这个红圈标的就是Model。它就应该是一个纯数据的集合，就是被各种东西传来传去，被各种加工处理的数据团。</p>
+<p>通常会有很多Model，一条业务流就是对应一条或者多条数据流，拿知乎为例子。</p>
+<p>文章是一个Model，一般叫Article，包括Title，Summary，Author，Content等等。</p>
+<p>评论也是一个Model，一般叫Comment，包括Content，userID等等。</p>
+<p>对于初学者而言，第一个要学会，就是建模，把业务逻辑映射成数据模型。</p>
+<ul>
+<li><strong>Util</strong> </li>
+</ul>
+<p>Util是工具的意思，一般来说，常常用来描述和业务逻辑没有关系的数据处理。</p>
+<p>Util一般要和私有方法对比：私有方法一般来说是只是在特地场景下使用的，私有方法越多，代码结构越乱。常见的重构策略就是首先从一个很多行数的代码里抽象出若干个私有方法，然后再抽出公用的Util。</p>
+<p>如果有可能，尽可能的少用私有方法，而是把他换成一个公用的Util，代表他和业务逻辑是不相关的。通常命名也是ArticleUtil，CommentUtil之类的。</p>
+<p>某中程度上也会跟Service有点接近。但是Service一般而言，都是包含有业务逻辑的，很少能做单元测试。</p>
+<p>Util一般来说，就是一个明确的输入和一个明确的输出结果。单元测试中，多数也是来测试Util。</p>
+<p>积累好自己的Util是一件很重要的事儿。</p>
+<ul>
+<li><strong>Service</strong>  </li>
+</ul>
+<p>Service比Util的概念大很多，它的重点是在于提供一个服务。这个服务可能包括一系列的数据处理，也有可能会调用多个Util，或者是调用别的服务。总归一句话，就是，有什么事情，你来找我。</p>
+<p>我们有时候会需要一些相对独立，与业务系统没啥关系的功能。但不是所有的功能都可以做成一个服务，服务是一个相对独立的功能模块，完成一些指定的工作，这些工作高度抽象和通用。一个典型的服务像是数据库服务、缓存服务、文件存储服务、身份验证服务、消息队列服务等。</p>
+<ul>
+<li><strong>Dao</strong> </li>
+</ul>
+<p>Dao一般而言，都是用来和底层数据库通信，负责对数据库的增删改查。</p>
+<p>是的。他就是一个Dao。他从来不关心这些货物要去哪里，他只关心。入库，出库，查询和更换。</p>
+<p>所谓的CRUD就是创建，读取，更新，删除。</p>
+<p>Dao最好都是要独立出来。</p>
+<p>到现在为止，最佳实践就是一个Service只对应一个Dao。Service会做一些额外的检查，如货物是否损坏，入库单是否完整，等等等等。</p>
+<p>我并不推荐在Service里调用多个Dao，也不推荐在Service里调用多个Service，大多数情况下我都不推荐这么干。</p>
+<p>具体原因以后再说，这也是一个开放性的话题。现在我们分清楚了Model，Util，Service和Dao，可是谁来做总的调度呢？</p>
+<ul>
+<li><strong>Controller</strong></li>
+</ul>
+<p>控制中心，所有的指令，调度都从这里发出去。</p>
+<p>哪一个Service做什么事儿，谁的数据提供给谁，一般而言，都是在Controller里实现的。</p>
+<p>controller : 入口    dao：数据库的读取  model：模型   service： 连接controller与dao之间 </p>
+<h3 id="2-实现首页"><a href="#2-实现首页" class="headerlink" title="2. 实现首页"></a>2. 实现首页</h3><p>首先，我们新建<code>user</code> ,<code>question</code> 两个service， 用来在控制器中获取数据库服务：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.nowcoder.service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.nowcoder.dao.UserDAO;</span><br><span class="line"><span class="keyword">import</span> com.nowcoder.model.User;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"SpringJavaAutowiringInspection"</span>)</span><br><span class="line">    UserDAO userDAO;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">getUser</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> userDAO.selectById(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.nowcoder.service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.nowcoder.dao.QuestionDAO;</span><br><span class="line"><span class="keyword">import</span> com.nowcoder.model.Question;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuestionService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"SpringJavaAutowiringInspection"</span>)</span><br><span class="line">    QuestionDAO questionDAO;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Question&gt; <span class="title">getLatestQuestions</span><span class="params">(<span class="keyword">int</span> userID, <span class="keyword">int</span> offset, <span class="keyword">int</span> limit)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> questionDAO.selectLatestQuestions(userID,offset,limit);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下一步，我们就在<strong>controller</strong> 中实现具体的首页操作了：</p>
+<ul>
+<li>注入user，question的service</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line">UserService userService;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line">QuestionService questionService;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>然后，实现首页的入口：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(path=&#123;<span class="string">"/"</span>,<span class="string">"index"</span>&#125;,method = &#123;RequestMethod.GET&#125;)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">(Model model)</span></span>&#123;</span><br><span class="line">        model.addAttribute(<span class="string">"vos"</span>, getQuestions(<span class="number">0</span>,<span class="number">0</span>,<span class="number">10</span>));</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"index"</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> List&lt;ViewObject&gt; <span class="title">getQuestions</span><span class="params">(<span class="keyword">int</span> userId, <span class="keyword">int</span> offset, <span class="keyword">int</span> limit)</span></span>&#123;</span><br><span class="line">        List&lt;Question&gt; questionList = questionService.getLatestQuestions(userId,offset,limit);</span><br><span class="line">        List&lt;ViewObject&gt; vos = <span class="keyword">new</span> ArrayList&lt;ViewObject&gt;();</span><br><span class="line">        <span class="keyword">for</span> (Question question : questionList)&#123;</span><br><span class="line">            ViewObject vo = <span class="keyword">new</span> ViewObject();</span><br><span class="line">            vo.set(<span class="string">"question"</span>, question);</span><br><span class="line">            vo.set(<span class="string">"user"</span>, userService.getUser(question.getUserID()));</span><br><span class="line">            vos.add(vo);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> vos;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，我们向首页的模板文件中传入了一个<strong>vos</strong> 的list型数据，里面记录了最新10个问题的问题内容以及发布者信息，通过这些信息，我们可以在首页中显示这10个问题的具体内容，如下：</p>
+<p><img src="https://lzygit-1255804027.cos.ap-beijing.myqcloud.com/photo/shouyeneirong.png" style="zoom:100%"></p>
+<p>在前端的模板文件中，如下实现：</p>
+<p><img src="https://lzygit-1255804027.cos.ap-beijing.myqcloud.com/photo/moban.png" style="zoom:100%"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Spring/" rel="tag"># Spring</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/09/Java多线程----1/" rel="next" title="Java多线程----1">
+                <i class="fa fa-chevron-left"></i> Java多线程----1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/15/Leetcode-day1/" rel="prev" title="Leetcode_day1">
+                Leetcode_day1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzA2OS85NjMx"></div>
+    </div>
+
+  
+
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://static.pexels.com/photos/33392/portrait-bird-nature-wild.jpg"
+                alt="zhenyulee" />
+            
+              <p class="site-author-name" itemprop="name">zhenyulee</p>
+              <p class="site-description motion-element" itemprop="description">Doing is better than saying.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/lzyu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/zhenyulee123" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/zhenyu-li-14" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/zhenyulee/" target="_blank" title="豆瓣">
+                      
+                        <i class="fa fa-fw fa-globe"></i>豆瓣</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-Mysql的基本操作"><span class="nav-number">1.</span> <span class="nav-text">一.Mysql的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-navicat图形化界面工具的使用"><span class="nav-number">1.1.</span> <span class="nav-text">1. navicat图形化界面工具的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-sql语句创建表"><span class="nav-number">1.2.</span> <span class="nav-text">2. sql语句创建表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Simple-CURD"><span class="nav-number">1.3.</span> <span class="nav-text">3.Simple CURD</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-Mybatis的简介"><span class="nav-number">2.</span> <span class="nav-text">二.Mybatis的简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-JDBC实现分析"><span class="nav-number">2.1.</span> <span class="nav-text">1.JDBC实现分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-JDBC演变到Mybatis过程"><span class="nav-number">2.2.</span> <span class="nav-text">2.JDBC演变到Mybatis过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-在Spring-boot-中配置Mybatis"><span class="nav-number">3.</span> <span class="nav-text">三.在Spring-boot 中配置Mybatis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-在Spring-boot中使用Mybatis操控数据库"><span class="nav-number">4.</span> <span class="nav-text">四.在Spring-boot中使用Mybatis操控数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-使用注解的方式操控数据库"><span class="nav-number">4.1.</span> <span class="nav-text">1. 使用注解的方式操控数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-使用xml的方式操控数据库"><span class="nav-number">4.2.</span> <span class="nav-text">2. 使用xml的方式操控数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-通过dao实现首页的查询显示"><span class="nav-number">5.</span> <span class="nav-text">五.通过dao实现首页的查询显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-web项目的结构回顾"><span class="nav-number">5.1.</span> <span class="nav-text">1.  web项目的结构回顾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-实现首页"><span class="nav-number">5.2.</span> <span class="nav-text">2. 实现首页</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhenyulee</span>
+
+  
+</div>
+
+
+<!--
+<div class="powered-by">
+<i class="fa fa-user-md"></i>
+<span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+-->
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+-->
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">This blog has a total of 34.8kwords</span>
+</div>
+<!--
+  <span class="post-meta-divider">|</span>
+  -->
+
+
+
+<!--
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+-->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("MDGUILBFcNtF41whBW12aG7G-gzGzoHsz", "nSybHzv770aBXLn7EEI2TXWQ");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
